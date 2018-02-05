@@ -1,5 +1,10 @@
 ;; BASIC CUSTOMIZATION
 
+;;hide the start-up message
+(setq inhibit-startup-message t)
+
+;---------------------
+
 ;;disable menu-bar
 ;;(menu-bar-mode -1)
 
@@ -35,3 +40,5 @@
 ;; don't blink cursor
 (blink-cursor-mode 0)
 
+;;show file-size in chars
+(size-indication-mode t)
