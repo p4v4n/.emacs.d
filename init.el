@@ -29,6 +29,9 @@
 ;;show column number in mode line
 (column-number-mode 1)
 
+;;enable incremental completion in mini-buffer
+(icomplete-mode 1)
 
-
+;; don't blink cursor
+(blink-cursor-mode 0)
 
