@@ -1,3 +1,3 @@
-# dotemacs
+# .emacs.d
 
 personal emacs configuration
