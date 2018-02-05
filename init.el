@@ -39,7 +39,7 @@
 ;;enable incremental completion in mini-buffer
 (icomplete-mode 1)
 
-;; don't blink cursor
+;;don't blink cursor
 (blink-cursor-mode 0)
 
 ;;show file-size in chars
@@ -47,3 +47,10 @@
 
 ;;change all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;;display time on mode-line
+(setq display-time-24hr-format t)
+(display-time-mode 1)
+
+;;stop making backup(~) files
+(setq make-backup-files nil)
