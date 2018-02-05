@@ -23,5 +23,12 @@
 ;;insert matching delimiters
 (electric-pair-mode 1)
 
+;;automatically reload files when they change on disk
+(global-auto-revert-mode 1)
+
+;;show column number in mode line
+(column-number-mode 1)
+
+
 
 
