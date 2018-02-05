@@ -3,6 +3,8 @@
 ;;hide the start-up message
 (setq inhibit-startup-message t)
 
+;;open emacs in full screen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 ;---------------------
 
 ;;disable menu-bar
@@ -42,3 +44,6 @@
 
 ;;show file-size in chars
 (size-indication-mode t)
+
+;;change all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
