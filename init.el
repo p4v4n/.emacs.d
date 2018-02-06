@@ -24,7 +24,7 @@
 ;;highlight current-line
 (global-hl-line-mode 1)
 
-;;highlight matching parentheis
+;;highlight matching parenthesis
 (show-paren-mode 1)
 
 ;;insert matching delimiters
@@ -61,3 +61,11 @@
 
 ;;remove trailing whitespace before saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;;keep track of window configurations
+(winner-mode t)
+;; Usage: C-c left(winner-undo) C-c right(winner-redo)
+
+;;move directionally between neighbouring windows
+(windmove-default-keybindings)
+;; Usage: S-[left right top down]
