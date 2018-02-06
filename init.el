@@ -69,3 +69,19 @@
 ;;move directionally between neighbouring windows
 (windmove-default-keybindings)
 ;; Usage: S-[left right top down]
+
+;;load a temporary default theme
+(load-theme 'wheatgrass)
+
+;;disable arrow keys
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))
+(global-unset-key (kbd "<C-left>"))
+(global-unset-key (kbd "<C-right>"))
+(global-unset-key (kbd "<C-up>"))
+(global-unset-key (kbd "<C-down>"))
+(global-unset-key (kbd "<M-up>"))
+(global-unset-key (kbd "<M-down>"))
+;; Usage: C-p(up) C-n(down) C-b(left) C-f(right)
