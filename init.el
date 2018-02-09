@@ -85,3 +85,23 @@
 
 ;;sort results of apropos by relevancy
 (setq apropos-sort-by-scores t)
+
+;;-------------------------
+;;-------packages-----------
+
+(require 'package)
+
+;;add more repositories to fetch-archive list
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+
+;;load and activate emacs lisp packages
+(package-initialize)
+
+;;don't activate all the installed packages
+(setq package-enable-at-startup nil)
+
+;;inform emacs about the latest versions of all packages
+(when (not package-archive-contents)
+  (package-refresh-contents))
