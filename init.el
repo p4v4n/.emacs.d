@@ -111,3 +111,12 @@
 
 (require 'use-package)
 (setq use-package-verbose t)
+
+;;install company-mode for auto-completion and activate it in all buffers
+(use-package company
+  :ensure t
+  :config (global-company-mode))
+
+;; better syntax highlighting for clojure files
+(use-package clojure-mode-extra-font-locking
+  :ensure t)
