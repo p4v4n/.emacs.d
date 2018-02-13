@@ -85,7 +85,6 @@
 
 ;;sort results of apropos by relevancy
 (setq apropos-sort-by-scores t)
-
 ;;-------------------------
 ;;-------packages-----------
 
@@ -105,3 +104,10 @@
 ;;inform emacs about the latest versions of all packages
 (when (not package-archive-contents)
   (package-refresh-contents))
+
+;;install use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-verbose t)
