@@ -121,6 +121,10 @@
   :ensure t
   :config (global-company-mode))
 
+;;use magit for git
+(use-package magit
+  :ensure t)
+
 ;;better syntax highlighting for clojure files
 (use-package clojure-mode-extra-font-locking
   :ensure t)
@@ -129,3 +133,8 @@
 (use-package rainbow-delimiters
   :ensure t
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+;;aggressively indent clojure-code
+(use-package aggressive-indent
+  :ensure t
+  :config (add-hook 'clojure-mode-hook 'aggressive-indent-mode))
