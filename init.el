@@ -112,11 +112,20 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+;;change theme to gruvbox-dark-hard
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'gruvbox-dark-hard t)
+
 ;;install company-mode for auto-completion and activate it in all buffers
 (use-package company
   :ensure t
   :config (global-company-mode))
 
-;; better syntax highlighting for clojure files
+;;better syntax highlighting for clojure files
 (use-package clojure-mode-extra-font-locking
   :ensure t)
+
+;;add colours to matching parens
+(use-package rainbow-delimiters
+  :ensure t
+  :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
