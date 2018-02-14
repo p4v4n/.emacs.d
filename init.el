@@ -151,3 +151,11 @@
 (use-package paredit
   :ensure t
   :init (add-hook 'clojure-mode-hook 'enable-paredit-mode))
+
+;;add cider(connects clojure repl to buffer)
+(use-package cider
+  :ensure t)
+
+;;add clj-refactor(provides refactoring support)
+(use-package clj-refactor
+  :ensure t)
