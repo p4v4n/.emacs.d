@@ -146,3 +146,8 @@
 (use-package aggressive-indent
   :ensure t
   :config (add-hook 'clojure-mode-hook 'aggressive-indent-mode))
+
+;;add paredit for easier sexp navigation/manipulation
+(use-package paredit
+  :ensure t
+  :init (add-hook 'clojure-mode-hook 'enable-paredit-mode))
