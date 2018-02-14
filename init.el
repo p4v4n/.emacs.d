@@ -125,6 +125,14 @@
 (use-package magit
   :ensure t)
 
+;;add smex and replace M-x with it.
+(use-package smex
+  :config (smex-initialize))
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;;better syntax highlighting for clojure files
 (use-package clojure-mode-extra-font-locking
   :ensure t)
