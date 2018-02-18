@@ -159,3 +159,8 @@
 ;;add clj-refactor(provides refactoring support)
 (use-package clj-refactor
   :ensure t)
+
+;;set my todo-list as default buffer on startup
+(setq
+ org-default-notes-file "~/.emacs.d/todo-lists/daily-list.org"
+ initial-buffer-choice org-default-notes-file)
