@@ -164,3 +164,23 @@
 (setq
  org-default-notes-file "~/.emacs.d/todo-lists/daily-list.org"
  initial-buffer-choice org-default-notes-file)
+
+;;---picked from Mrinal---
+;; for html & css
+(use-package web-mode
+  :ensure t
+  :defer t
+  :mode
+  ("\\.html?\\'" . web-mode)
+  ("\\.css?\\'" . web-mode)
+  :config
+  (setq-default indent-tabs-mode nil)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-script-padding 0)
+  (setq web-mode-enable-auto-expanding t)
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-auto-pairing nil)
+  (setq web-mode-enable-auto-closing t)
+  (setq web-mode-enable-auto-quoting t))
