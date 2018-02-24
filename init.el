@@ -94,6 +94,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 ;;load and activate emacs lisp packages
 (package-initialize)
@@ -183,4 +184,6 @@
   (setq web-mode-enable-css-colorization t)
   (setq web-mode-enable-auto-pairing nil)
   (setq web-mode-enable-auto-closing t)
-  (setq web-mode-enable-auto-quoting t))
+  (setq web-mode-enable-auto-quoting t)
+  (setq web-mode-auto-close-style 2)      ;;close after opening-tag
+  (setq web-mode-auto-quote-style 2))     ;;use single-quotes for attributes(requires v15)
