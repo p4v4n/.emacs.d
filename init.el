@@ -5,7 +5,7 @@
 
 ;;open emacs in full screen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-;---------------------
+                                        ;---------------------
 
 ;;disable menu-bar
 ;;(menu-bar-mode -1)
@@ -171,6 +171,7 @@
 (use-package web-mode
   :ensure t
   :defer t
+  :init (add-hook 'before-save-hook 'web-mode-buffer-indent)    ;;indent buffer before saving
   :mode
   ("\\.html?\\'" . web-mode)
   ("\\.css?\\'" . web-mode)
