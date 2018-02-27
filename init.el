@@ -5,7 +5,7 @@
 
 ;;open emacs in full screen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-                                        ;---------------------
+;;---------------------
 
 ;;disable menu-bar
 ;;(menu-bar-mode -1)
@@ -151,7 +151,9 @@
 ;;add paredit for easier sexp navigation/manipulation
 (use-package paredit
   :ensure t
-  :init (add-hook 'clojure-mode-hook 'enable-paredit-mode))
+  :init
+  (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+  (add-hook 'cider-repl-mode-hook 'enable-paredit-mode))
 
 ;;add cider(connects clojure repl to buffer)
 (use-package cider
