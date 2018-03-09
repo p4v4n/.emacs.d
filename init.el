@@ -139,6 +139,11 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+;;add org-bullets
+(use-package org-bullets
+  :ensure t
+  :config (add-hook 'org-mode-hook 'org-bullets-mode))
 ;;----------------Start of Clojure-------------------------------
 
 ;;better syntax highlighting for clojure files
