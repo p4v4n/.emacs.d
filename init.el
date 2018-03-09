@@ -128,11 +128,18 @@
 
 ;;add smex and replace M-x with it.
 (use-package smex
+  :ensure t
   :config (smex-initialize))
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;;brings up help on key-combinations
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+;;----------------Start of Clojure-------------------------------
 
 ;;better syntax highlighting for clojure files
 (use-package clojure-mode-extra-font-locking
@@ -162,6 +169,8 @@
 ;;add clj-refactor(provides refactoring support)
 (use-package clj-refactor
   :ensure t)
+
+;;-------------------End of Clojure---------------------
 
 ;;set my todo-list as default buffer on startup
 (setq
