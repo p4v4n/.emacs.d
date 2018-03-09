@@ -36,9 +36,6 @@
 ;;show column number in mode line
 (column-number-mode 1)
 
-;;enable incremental completion in mini-buffer
-(icomplete-mode 1)
-
 ;;don't blink cursor
 (blink-cursor-mode 0)
 
@@ -85,6 +82,12 @@
 
 ;;sort results of apropos by relevancy
 (setq apropos-sort-by-scores t)
+
+;;ido-mode-interactively do things with buffers and files
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 ;;-------------------------
 ;;-------packages-----------
 
