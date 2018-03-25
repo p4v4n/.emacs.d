@@ -143,10 +143,19 @@
   :ensure t
   :config (which-key-mode))
 
-;;add org-bullets
+;;org-mode custamization
+
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-switchb)
+
+;;use org-bullets
 (use-package org-bullets
   :ensure t
   :config (add-hook 'org-mode-hook 'org-bullets-mode))
+
+;;------------------------------------------------
 ;;----------------Start of Clojure-------------------------------
 
 ;;better syntax highlighting for clojure files
@@ -207,3 +216,17 @@
   (setq web-mode-enable-auto-quoting t)
   (setq web-mode-auto-close-style 2)      ;;close after opening-tag
   (setq web-mode-auto-quote-style 2))     ;;use single-quotes for attributes(requires v15)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("~/.emacs.d/org-notes/test.org" "~/.emacs.d/org-notes/org-mode-rainer-konig.org"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
