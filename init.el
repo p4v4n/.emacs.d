@@ -8,7 +8,7 @@
 ;;---------------------
 
 ;;disable menu-bar
-;;(menu-bar-mode -1)
+(menu-bar-mode -1)
 
 ;;disable tool-bar
 (tool-bar-mode -1)
@@ -88,6 +88,10 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
+
+;;replace list-buffers with ibuffer(C-x C-b)
+(defalias 'list-buffers 'ibuffer)
+
 ;;-------------------------
 ;;-------packages-----------
 
@@ -119,6 +123,10 @@
 ;;change theme to gruvbox-dark-hard
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'gruvbox-dark-hard t)
+
+;; to try out other packages
+(use-package try
+  :ensure t)
 
 ;;install company-mode for auto-completion and activate it in all buffers
 (use-package company
@@ -216,6 +224,9 @@
   (setq web-mode-enable-auto-quoting t)
   (setq web-mode-auto-close-style 2)      ;;close after opening-tag
   (setq web-mode-auto-quote-style 2))     ;;use single-quotes for attributes(requires v15)
+
+;;------------------
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
