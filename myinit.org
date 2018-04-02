@@ -1,0 +1,262 @@
+#+STARTIP: overview
+
+* Inteface Tweaks
+  #+BEGIN_SRC emacs-lisp
+    ;;hide the start-up message
+    (setq inhibit-startup-message t)
+
+    ;;open emacs in full screen
+    (add-to-list 'default-frame-alist '(fullscreen . maximized))
+    ;;---------------------
+
+    ;;disable menu-bar
+    (menu-bar-mode -1)
+
+    ;;disable tool-bar
+    (tool-bar-mode -1)
+
+    ;;disable scroll-bar
+    (scroll-bar-mode -1)
+
+    ;;-----------------------
+
+    ;;show line-numbers
+    (global-linum-mode 1)
+
+    ;;highlight current-line
+    (global-hl-line-mode 1)
+
+    ;;highlight matching parenthesis
+    (show-paren-mode 1)
+
+    ;;insert matching delimiters
+    (electric-pair-mode 1)
+
+    ;;automatically reload files when they change on disk
+    (global-auto-revert-mode 1)
+
+    ;;show column number in mode line
+    (column-number-mode 1)
+
+    ;;don't blink cursor
+    (blink-cursor-mode 0)
+
+    ;;show file-size in chars
+    (size-indication-mode t)
+
+    ;;change all yes/no questions to y/n type
+    (fset 'yes-or-no-p 'y-or-n-p)
+
+    ;;display time on mode-line
+    (setq display-time-24hr-format t)
+    (display-time-mode 1)
+
+    ;;stop making backup(~) files
+    (setq make-backup-files nil)
+
+    ;;set encoding to utf-8
+    (prefer-coding-system 'utf-8)
+    (setq-default buffer-file-coding-system 'utf-8-auto-unix)
+
+    ;;remove trailing whitespace before saving
+    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+    ;;keep track of window configurations
+    (winner-mode t)
+    ;; Usage: C-c left(winner-undo) C-c right(winner-redo)
+
+    ;;move directionally between neighbouring windows
+    (windmove-default-keybindings)
+    ;; Usage: S-[left right top down]
+
+    ;;disable arrow keys
+    (global-unset-key (kbd "<left>"))
+    (global-unset-key (kbd "<right>"))
+    (global-unset-key (kbd "<up>"))
+    (global-unset-key (kbd "<down>"))
+    (global-unset-key (kbd "<C-left>"))
+    (global-unset-key (kbd "<C-right>"))
+    (global-unset-key (kbd "<C-up>"))
+    (global-unset-key (kbd "<C-down>"))
+    (global-unset-key (kbd "<M-up>"))
+    (global-unset-key (kbd "<M-down>"))
+    ;; Usage: C-p(up) C-n(down) C-b(left) C-f(right)
+
+    ;;sort results of apropos by relevancy
+    (setq apropos-sort-by-scores t)
+
+    ;;replace list-buffers with ibuffer(C-x C-b)
+    (defalias 'list-buffers 'ibuffer)
+  #+END_SRC
+
+* Try
+  to try out other packages
+  #+BEGIN_SRC emacs-lisp
+    (use-package try
+      :ensure t)
+  #+END_SRC
+
+* Theme
+  sanityinc-tomorrow-bright
+  #+BEGIN_SRC emacs-lisp
+  (use-package color-theme-sanityinc-tomorrow
+    :ensure t
+    :config (load-theme 'sanityinc-tomorrow-bright t))
+  #+END_SRC
+
+* Smex
+  smart M-x enhancement.
+  #+BEGIN_SRC emacs-lisp
+  (use-package smex
+    :ensure t
+    :config (smex-initialize))
+
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+  #+END_SRC
+
+* Which Key
+  brings up help on key-combinations
+  #+BEGIN_SRC emacs-lisp
+    (use-package which-key
+      :ensure t
+      :config (which-key-mode))
+  #+END_SRC
+
+* Company
+  for auto-completion
+  #+BEGIN_SRC emacs-lisp
+    (use-package company
+      :ensure t
+      :config (global-company-mode))
+  #+END_SRC
+
+* Counsel
+  collection of ivy-enchanced-versions of common emacs commands.
+  #+BEGIN_SRC emacs-lisp
+    (use-package counsel
+      :ensure t)
+  #+END_SRC
+
+* Swiper
+  ivy: a generic completion mechanism for Emacs
+  swiper: an Ivy-enhanced alternative to isearch.
+  #+BEGIN_SRC emacs-lisp
+    (use-package swiper
+      :ensure try
+      :config (ivy-mode 1)
+      (setq ivy-use-virtual-buffers t)
+      (setq enable-recursive-minibuffers t)
+      (global-set-key "\C-s" 'swiper)
+      (global-set-key (kbd "C-c C-r") 'ivy-resume)
+      (global-set-key (kbd "<f6>") 'ivy-resume)
+      (global-set-key (kbd "M-x") 'counsel-M-x)
+      (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+      (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+      (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+      (global-set-key (kbd "<f1> l") 'counsel-find-library)
+      (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+      (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+      (global-set-key (kbd "C-c g") 'counsel-git)
+      (global-set-key (kbd "C-c j") 'counsel-git-grep)
+      (global-set-key (kbd "C-c k") 'counsel-ag)
+      (global-set-key (kbd "C-x l") 'counsel-locate)
+      (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+      (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+  #+END_SRC
+
+* Magit
+  git interface
+    #+BEGIN_SRC emacs-lisp
+      (use-package magit
+        :ensure t)
+    #+END_SRC
+
+* Org Mode
+    #+BEGIN_SRC emacs-lisp
+      (global-set-key "\C-cl" 'org-store-link)
+      (global-set-key "\C-ca" 'org-agenda)
+      (global-set-key "\C-cc" 'org-capture)
+      (global-set-key "\C-cb" 'org-switchb)
+
+      ;;use org-bullets
+      (use-package org-bullets
+        :ensure t
+        :config (add-hook 'org-mode-hook 'org-bullets-mode))
+    #+END_SRC
+* Web Mode
+
+  #+BEGIN_SRC emacs-lisp
+    ;; for html & css
+    (use-package web-mode
+      :ensure t
+      :defer t
+      :init (add-hook 'before-save-hook 'web-mode-buffer-indent)    ;;indent buffer before saving
+      :mode
+      ("\\.html?\\'" . web-mode)
+      ("\\.css?\\'" . web-mode)
+      :config
+      (setq-default indent-tabs-mode nil)
+      (setq web-mode-markup-indent-offset 2)
+      (setq web-mode-code-indent-offset 2)
+      (setq web-mode-css-indent-offset 2)
+      (setq web-mode-script-padding 0)
+      (setq web-mode-enable-auto-expanding t)
+      (setq web-mode-enable-css-colorization t)
+      (setq web-mode-enable-auto-pairing nil)
+      (setq web-mode-enable-auto-closing t)
+      (setq web-mode-enable-auto-quoting t)
+      (setq web-mode-auto-close-style 2)      ;;close after opening-tag
+      (setq web-mode-auto-quote-style 2))     ;;use single-quotes for attributes(requires v15)
+  #+END_SRC
+
+* Clojure Stuff
+
+** clojure-mode-extra-font-locking
+   better syntax highlighting for clojure files
+   #+BEGIN_SRC emacs-lisp
+     (use-package clojure-mode-extra-font-locking
+       :ensure t)
+   #+END_SRC
+
+** rainbow-delimiters
+   add colours to matching parens
+   #+BEGIN_SRC emacs-lisp
+     (use-package rainbow-delimiters
+       :ensure t
+       :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+   #+END_SRC
+
+** aggresive-indent
+   aggressively indent clojure-code
+   #+BEGIN_SRC emacs-lisp
+     (use-package aggressive-indent
+       :ensure t
+       :config (add-hook 'clojure-mode-hook 'aggressive-indent-mode))
+   #+END_SRC
+
+** paredit
+   allows easier sexp navigation/manipulation
+   #+BEGIN_SRC emacs-lisp
+     (use-package paredit
+       :ensure t
+       :init
+       (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+       (add-hook 'cider-repl-mode-hook 'enable-paredit-mode))
+   #+END_SRC
+
+** cider
+   connects clojure repl to buffer
+   #+BEGIN_SRC emacs-lisp
+     (use-package cider
+       :ensure t)
+
+   #+END_SRC
+
+** clj-refactor
+   provides refactoring support
+   #+BEGIN_SRC emacs-lisp
+     (use-package clj-refactor
+       :ensure t)
+   #+END_SRC
