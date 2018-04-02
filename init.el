@@ -119,9 +119,10 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
-;;change theme to gruvbox-dark-hard
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'gruvbox-dark-hard t)
+;;change theme to sanityinc-tomorrow-bright
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
+  :config (load-theme 'sanityinc-tomorrow-bright t))
 
 ;; to try out other packages
 (use-package try
@@ -253,18 +254,3 @@
   (setq web-mode-auto-quote-style 2))     ;;use single-quotes for attributes(requires v15)
 
 ;;------------------
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   (quote
-    ("~/.emacs.d/org-notes/test.org" "~/.emacs.d/org-notes/org-mode-rainer-konig.org"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
