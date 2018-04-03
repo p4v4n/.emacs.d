@@ -29,13 +29,10 @@
 (setq use-package-verbose t)
 
 ;;----------------------------------
-
-;;set my todo-list as default buffer on startup
-(setq
- org-default-notes-file "~/.emacs.d/todo-lists/daily-list.org"
- initial-buffer-choice org-default-notes-file)
-
-;;------------------
+;;set my todo-list as default buffer on startup if it exists
+(if (file-exists-p "~/.emacs.d/todo-lists/daily-list.org")
+    (setq initial-buffer-choice "~/.emacs.d/todo-lists/daily-list.org"))
+;;---------------
 
 ;;load all customizations from myinit.org
 (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))

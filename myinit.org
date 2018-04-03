@@ -277,9 +277,10 @@
 * Flycheck
   on-the-fly syntax checker
   #+BEGIN_SRC emacs-lisp
-  (use-package flycheck
-    :ensure t
-    :init (global-flycheck-mode t))
+      (use-package flycheck
+	:ensure t
+	:init (global-flycheck-mode t)
+	:config (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
   #+END_SRC
 
 * Yasnippet
