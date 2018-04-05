@@ -98,13 +98,21 @@
       :ensure t)
   #+END_SRC
 
-* Theme
-  sanityinc-tomorrow-bright
-  #+BEGIN_SRC emacs-lisp
-  (use-package color-theme-sanityinc-tomorrow
+* Appearance
+** Theme
+   sanityinc-tomorrow-bright
+   #+BEGIN_SRC emacs-lisp
+   (use-package color-theme-sanityinc-tomorrow
+     :ensure t
+     :config (load-theme 'sanityinc-tomorrow-bright t))
+   #+END_SRC
+** Beacon
+#+BEGIN_SRC emacs-lisp
+  (use-package beacon
     :ensure t
-    :config (load-theme 'sanityinc-tomorrow-bright t))
-  #+END_SRC
+    :config
+    (beacon-mode 1))
+#+END_SRC
 
 * Smex
   smart M-x enhancement.
@@ -329,4 +337,3 @@ treats undo history as a tree
     :config
     (counsel-projectile-on))
 #+END_SRC
-
