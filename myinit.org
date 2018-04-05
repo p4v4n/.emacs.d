@@ -230,6 +230,17 @@
       (setq web-mode-auto-quote-style 2))     ;;use single-quotes for attributes(requires v15)
   #+END_SRC
 
+* Emmet Mode
+produces HTML from CSS-like selectors
+#+BEGIN_SRC emacs-lisp
+  (use-package emmet-mode
+    :ensure t
+    :config
+    (add-hook 'sgml-mode-hook 'emmet-mode)
+    (add-hook 'web-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook 'emmet-mode))
+#+END_SRC
+
 * Clojure Stuff
 
 ** clojure-mode-extra-font-locking
