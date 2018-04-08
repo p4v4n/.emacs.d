@@ -23,6 +23,9 @@
     ;;show line-numbers
     (global-linum-mode 1)
 
+    ;;line wrap long lines
+    (global-visual-line-mode 1)
+
     ;;highlight current-line
     (global-hl-line-mode 1)
 
@@ -336,5 +339,5 @@ treats undo history as a tree
   (use-package counsel-projectile
     :ensure t
     :config
-    (counsel-projectile-on))
+    (setq counsel-projectile-on t))
 #+END_SRC
