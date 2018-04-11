@@ -28,6 +28,9 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+;; Move custom-config to a seperate file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 ;;----------------------------------
 ;;set my todo-list as default buffer on startup if it exists
 (if (file-exists-p "~/.emacs.d/todo-lists/daily-list.org")
@@ -36,3 +39,4 @@
 
 ;;load all customizations from myinit.org
 (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
+
