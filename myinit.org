@@ -110,12 +110,27 @@
      :config (load-theme 'sanityinc-tomorrow-bright t))
    #+END_SRC
 ** Beacon
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
   (use-package beacon
     :ensure t
     :config
-    (beacon-mode 1))
-#+END_SRC
+    (setq beacon-mode 1))
+   #+END_SRC
+
+* Desktop Mode
+  save emacs-state from one session to another.
+  #+BEGIN_SRC emacs-lisp
+    (use-package desktop
+      :config
+      (setq desktop-dirname             "~/.emacs.d/desktop/"
+            desktop-base-file-name      "emacs.desktop"
+            desktop-base-lock-name      "lock"
+            desktop-path                (list desktop-dirname)
+            desktop-save                t
+            desktop-files-not-to-save   "^$"  ;reload tramp paths
+            desktop-load-locked-desktop t)
+      (desktop-save-mode 1))
+  #+END_SRC
 
 * Smex
   smart M-x enhancement.
@@ -243,15 +258,15 @@
   #+END_SRC
 
 * Emmet Mode
-produces HTML from CSS-like selectors
-#+BEGIN_SRC emacs-lisp
+  produces HTML from CSS-like selectors
+  #+BEGIN_SRC emacs-lisp
   (use-package emmet-mode
     :ensure t
     :config
     (add-hook 'sgml-mode-hook 'emmet-mode)
     (add-hook 'web-mode-hook 'emmet-mode)
     (add-hook 'css-mode-hook 'emmet-mode))
-#+END_SRC
+  #+END_SRC
 
 * Clojure Stuff
 
