@@ -231,6 +231,14 @@
   :ensure t)
   #+END_SRC
 
+* PDF Tools
+  #+BEGIN_SRC emacs-lisp
+  (use-package pdf-tools
+    :ensure t
+    :init
+    (pdf-tools-install))
+  #+END_SRC
+
 * Web Mode
 
   #+BEGIN_SRC emacs-lisp
