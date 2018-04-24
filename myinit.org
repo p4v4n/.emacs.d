@@ -291,7 +291,8 @@
    #+BEGIN_SRC emacs-lisp
      (use-package rainbow-delimiters
        :ensure t
-       :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+       :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+	     (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode))
    #+END_SRC
 
 ** aggresive-indent
@@ -316,7 +317,29 @@
    connects clojure repl to buffer
    #+BEGIN_SRC emacs-lisp
      (use-package cider
-       :ensure t)
+       :ensure t
+       :init (setq cider-repl-pop-to-buffer-on-connect t
+		   cider-mode-line nil
+		   cider-prompt-for-symbol nil
+		   cider-show-error-buffer t
+		   cider-auto-select-error-buffer t
+		   cider-repl-history-file "~/.emacs.d/cider-history"
+		   cider-repl-wrap-history t
+		   cider-repl-history-size 100
+		   cider-repl-use-clojure-font-lock t
+		   cider-docview-fill-column 70
+		   cider-stacktrace-fill-column 76
+		   nrepl-hide-special-buffers t
+		   nrepl-popup-stacktraces nil
+		   nrepl-log-messages nil
+		   nrepl-hide-special-buffers t
+		   cider-repl-display-help-banner nil
+		   cider-repl-result-prefix ";; => ")
+	:config
+	(add-hook 'cider-mode-hook #'eldoc-mode)
+	(add-hook 'cider-mode-hook #'company-mode)
+	(add-hook 'cider-repl-mode-hook #'eldoc-mode)
+	(add-hook 'cider-repl-mode-hook #'company-mode))
 
    #+END_SRC
 
