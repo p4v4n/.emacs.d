@@ -117,6 +117,20 @@
     (setq beacon-mode 1))
    #+END_SRC
 
+** Smart-Mode-Line
+#+BEGIN_SRC emacs-lisp
+  (use-package smart-mode-line
+    :ensure t
+    :init (setq sml/namewidth 10)
+	  (sml/setup))
+#+END_SRC
+
+*** Powerline Theme
+#+BEGIN_SRC emacs-lisp
+  (use-package smart-mode-line-powerline-theme
+    :ensure t)
+#+END_SRC
+
 * Desktop Mode
   save emacs-state from one session to another.
   #+BEGIN_SRC emacs-lisp
