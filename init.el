@@ -40,3 +40,8 @@
 ;;load all customizations from myinit.org
 (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
 
+;;------------
+
+;;set default-browser to chromium
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "chromium-browser")
