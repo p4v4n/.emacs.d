@@ -166,6 +166,17 @@
       :config (which-key-mode))
   #+END_SRC
 
+* Helpful
+A better Emacs *help* buffer
+#+BEGIN_SRC emacs-lisp
+    (use-package helpful
+      :config
+      (global-set-key (kbd "C-h f") 'helpful-callable)
+      (global-set-key (kbd "C-h v") 'helpful-variable)
+      (global-set-key (kbd "C-h k") 'helpful-key)
+      (global-set-key (kbd "C-c C-.") 'helpful-at-point))
+#+END_SRC
+
 * Company
   for auto-completion
   #+BEGIN_SRC emacs-lisp
