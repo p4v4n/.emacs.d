@@ -189,7 +189,12 @@
       (setq company-selection-wrap-around t)
       (setq company-tooltip-align-annotations t)
       (setq company-tooltip-flip-when-above t)
-      (setq company-transformers '(company-sort-by-occurrence)))
+      (setq company-transformers '(company-sort-by-occurrence))
+      (define-key company-active-map (kbd "C-n") 'company-select-next)
+      (define-key company-active-map (kbd "C-p") 'company-select-previous)
+      (define-key company-search-map (kbd "C-n") 'company-select-next)
+      (define-key company-search-map (kbd "C-p") 'company-select-previous)
+      (define-key company-search-map (kbd "C-t") 'company-search-toggle-filtering))
   #+END_SRC
 
 * Counsel
