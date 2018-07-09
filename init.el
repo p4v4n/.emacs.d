@@ -45,3 +45,9 @@
 ;;set default-browser to chromium
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium-browser")
+
+;;-----------
+;; load user customizations
+(when (file-exists-p "~/.emacs.d/init-user.el")
+  (setq user-custom-file "~/.emacs.d/init-user.el")
+  (load user-custom-file))
