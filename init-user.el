@@ -9,3 +9,12 @@
     (if (file-exists-p htdp-file)
         (save-selected-window (find-file-read-only-other-window htdp-file))
       (message "the recipe file does not exist."))))
+
+
+;; Move to previous-window (bound to C-x p)
+(defun other-window-backward (&optional n)
+  "Select the nth previous window"
+  (interactive "P")
+  (other-window (- (prefix-numeric-value n))))
+
+(global-set-key "\C-xp" 'other-window-backward)
