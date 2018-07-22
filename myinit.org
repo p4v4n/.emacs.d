@@ -244,6 +244,7 @@
 
 * Org Mode
   #+BEGIN_SRC emacs-lisp
+    (use-package org :ensure org-plus-contrib :pin org)
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
     (global-set-key "\C-cc" 'org-capture)
