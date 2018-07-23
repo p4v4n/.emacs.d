@@ -252,10 +252,19 @@
     (setq org-format-latex-header "\\documentclass{article}\n\\usepackage[usenames]{color}\n[PACKAGES]\n[DEFAULT-PACKAGES]\n\\pagestyle{empty}             % do not remove\n% The settings below are copied from fullpage.sty\n\\setlength{\\textwidth}{\\paperwidth}\n\\addtolength{\\textwidth}{-3cm}\n\\setlength{\\oddsidemargin}{1.5cm}\n\\addtolength{\\oddsidemargin}{-2.54cm}\n\\setlength{\\evensidemargin}{\\oddsidemargin}\n\\setlength{\\textheight}{\\paperheight}\n\\addtolength{\\textheight}{-\\headheight}\n\\addtolength{\\textheight}{-\\headsep}\n\\addtolength{\\textheight}{-\\footskip}\n\\addtolength{\\textheight}{-3cm}\n\\setlength{\\topmargin}{1.5cm}\n\\addtolength{\\topmargin}{-2.54cm}\\everymath{\\displaystyle}")
     (plist-put org-format-latex-options :scale 2.0)
 
+    ;;let babel execute the following languages in org documents
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((python . t)
+       (dot . t)
+       (clojure .t)
+       (shell . t)))
+
     ;;use org-bullets
     (use-package org-bullets
       :ensure t
       :config (add-hook 'org-mode-hook 'org-bullets-mode))
+
   #+END_SRC
 
 * Org Reveal
