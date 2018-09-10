@@ -19,6 +19,8 @@
     (scroll-bar-mode -1)
 
     ;;-----------------------
+    ;;get rid of the annoying bell
+    (setq ring-bell-function 'ignore)
 
     ;;show line-numbers
     (global-linum-mode 1)
