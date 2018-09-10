@@ -46,6 +46,9 @@
     ;;don't blink cursor
     (blink-cursor-mode 0)
 
+    ;;adaptive cursor width shows width of character
+    (setq x-stretch-cursor t)
+
     ;;show file-size in chars
     (size-indication-mode t)
 
