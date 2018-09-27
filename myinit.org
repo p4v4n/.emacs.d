@@ -453,6 +453,17 @@ when splitting windows open the previous buffer in the second window.
     :init (global-undo-tree-mode))
   #+END_SRC
 
+* Multiple Cursors
+  #+BEGIN_SRC emacs-lisp
+    (use-package multiple-cursors
+      :ensure t
+      :bind (("C->" . mc/mark-next-like-this)
+             ("C-<" . mc/mark-previous-like-this)
+             ("C-c C-a" . mc/mark-all-like-this)
+             ("C-c C-l" . mc/edit-lines))
+      :init (multiple-cursors-mode))
+  #+END_SRC
+
 * Projectile
   #+BEGIN_SRC emacs-lisp
   (use-package projectile
