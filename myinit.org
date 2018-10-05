@@ -284,6 +284,13 @@ when splitting windows open the previous buffer in the second window.
     (add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
     (add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook))
 #+END_SRC
+* Git TimeMachine
+#+BEGIN_SRC emacs-lisp
+  (use-package git-timemachine
+    :ensure t
+    :bind
+    ("C-x C-g" . git-timemachine))
+#+END_SRC
 * Org Mode
   #+BEGIN_SRC emacs-lisp
     (use-package org :ensure org-plus-contrib :pin org)
