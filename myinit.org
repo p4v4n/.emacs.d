@@ -479,6 +479,15 @@ when splitting windows open the previous buffer in the second window.
     :init (global-undo-tree-mode))
   #+END_SRC
 
+* Ztree
+directory tree comparison mode
+#+BEGIN_SRC emacs-lisp
+  (use-package ztree
+    :commands (ztree-dir ztree-diff)
+    :ensure t
+    :config
+    (setq ztree-dir-move-focus t))
+#+END_SRC
 * Multiple Cursors
   #+BEGIN_SRC emacs-lisp
     (use-package multiple-cursors
