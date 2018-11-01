@@ -402,6 +402,16 @@ when splitting windows open the previous buffer in the second window.
     (add-hook 'css-mode-hook 'emmet-mode))
   #+END_SRC
 
+* Rest Client
+  to replace postman
+  #+BEGIN_SRC emacs-lisp
+    (use-package restclient
+      :mode ("\\.rc\\'" . restclient-mode)
+      :config
+      (use-package company-restclient
+        :config
+        (add-to-list 'company-backends 'company-restclient)))
+  #+END_SRC
 * Clojure Stuff
 
 ** clojure-mode-extra-font-locking
