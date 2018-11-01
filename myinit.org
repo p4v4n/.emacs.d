@@ -270,6 +270,13 @@ when splitting windows open the previous buffer in the second window.
       (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
   #+END_SRC
 
+* Dired
+  #+BEGIN_SRC emacs-lisp
+    (use-package dired
+      :config
+      (put 'dired-find-alternate-file 'disabled nil)
+      (define-key dired-mode-map (kbd "RET") #'dired-find-alternate-file))
+  #+END_SRC
 * Magit
   git interface
   #+BEGIN_SRC emacs-lisp
